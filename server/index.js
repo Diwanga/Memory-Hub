@@ -16,9 +16,12 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 app.use("/user", userRouter);
-app.get('/', () => {
-  console.log("MemoryHUB Server");
+
+app.get('/', (req, res) => {
+  res.send("APP running")
 })
+
+
 const CONNECTION_URL = 'mongodb+srv://diwanga:qwerty123@cluster0.fkusz.mongodb.net/MemoryHUB?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
